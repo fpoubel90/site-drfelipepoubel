@@ -133,7 +133,7 @@ export default function CirurgiaGeralPage() {
                     <span className="text-blue-500 text-2xl">🔍</span> Sintomas Comuns
                   </h3>
                   <ul className="list-disc list-outside ml-5 space-y-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    <li>Presença de um abaulamento ou "caroço" visível, que pode desaparecer ao deitar.</li>
+                    <li>Presença de um abaulamento ou caroço visível, que pode desaparecer ao deitar.</li>
                     <li>Desconforto ou dor na região, especialmente ao realizar esforço físico, levantar peso ou tossir.</li>
                     <li>Em casos graves (hérnia encarcerada ou estrangulada), pode ocorrer dor intensa e contínua, náuseas, vômitos e alterações no trânsito intestinal, configurando uma urgência médica.</li>
                   </ul>
