@@ -1,45 +1,49 @@
-// Em src/app/sitemap.ts
 import { MetadataRoute } from 'next';
 
+// Define o tipo para cada entrada do sitemap para maior clareza
+type SitemapEntry = {
+  url: string;
+  lastModified: Date;
+  changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'; // Tipo literal exato
+  priority: number;
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  // MUITO IMPORTANTE: Substitua pela URL base correta do SEU site
   const baseUrl = 'https://www.drfelipepoubel.com.br'; 
 
-  // Páginas principais do seu site
-  const staticPages = [
+  const staticPages: SitemapEntry[] = [ // Adiciona o tipo aqui
     {
-      url: baseUrl, // Página Inicial
+      url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'yearly', // Pode ser 'monthly' se você atualiza a home com frequência
+      changeFrequency: 'yearly', 
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/#sobre`, // Seção Sobre na página inicial
+      url: `${baseUrl}/#sobre`, 
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/#servicos`, // Seção Tratamentos em Destaque na página inicial
+      url: `${baseUrl}/#servicos`, 
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/#localizacao`, // Seção Onde me Encontrar na página inicial
+      url: `${baseUrl}/#localizacao`, 
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
   ];
 
-  // Suas páginas de serviço detalhadas
-  const servicePages = [
+  const servicePages: SitemapEntry[] = [ // Adiciona o tipo aqui
     {
       url: `${baseUrl}/servicos/cirurgia-geral`,
-      lastModified: new Date(), // Idealmente, data da última modificação real do conteúdo
-      changeFrequency: 'monthly', // Com que frequência você espera que o conteúdo mude
-      priority: 0.9, // Prioridade um pouco maior para páginas de serviço
+      lastModified: new Date(), 
+      changeFrequency: 'monthly', 
+      priority: 0.9, 
     },
     {
       url: `${baseUrl}/servicos/cancer-de-pele`,
@@ -53,8 +57,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    // Adicione mais páginas de serviço aqui se você criar mais no futuro
   ];
 
-  return [...staticPages, ...servicePages];
+  const allEntries: MetadataRoute.Sitemap = [...staticPages, ...servicePages];
+  return allEntries; // Retorna o array já com o tipo esperado
 }
