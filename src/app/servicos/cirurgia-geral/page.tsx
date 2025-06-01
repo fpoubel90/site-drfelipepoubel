@@ -1,14 +1,14 @@
 "use client"; 
 
-import type { Metadata } from 'next'; 
 import Image from "next/image"; 
 import { useEffect } from 'react'; 
 import AOS from 'aos'; 
 import 'aos/dist/aos.css'; 
+import Link from 'next/link'; // Importação para o Link do CTA
 
-// export const metadata: Metadata = { // Metadata estática é melhor em Server Components ou layout.tsx.
-// title: 'Cirurgia Geral Detalhada | Dr. Felipe Poubel',
-// description: 'Saiba mais sobre os procedimentos de Cirurgia Geral oferecidos pelo Dr. Felipe Poubel, incluindo colelitíase (pedra na vesícula), hérnias abdominais e outras condições.',
+// export const metadata = { 
+//   title: 'Cirurgia Geral Detalhada | Dr. Felipe Poubel',
+//   description: 'Saiba mais sobre os procedimentos de Cirurgia Geral oferecidos pelo Dr. Felipe Poubel, incluindo colelitíase (pedra na vesícula), hérnias abdominais e outras condições.',
 // };
 
 export default function CirurgiaGeralPage() {
@@ -18,39 +18,12 @@ export default function CirurgiaGeralPage() {
       once: true,    
       offset: 100,   
     });
-    // Para garantir que o scroll para âncoras funcione bem com cabeçalho fixo, se necessário:
-    const handleHashChange = () => {
-      if (window.location.hash) {
-        const element = document.getElementById(window.location.hash.substring(1));
-        if (element) {
-          const headerOffset = 80; // Ajuste este valor conforme a altura do seu cabeçalho
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerOffset;
-    
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
-        }
-      }
-    };
-    // Adiciona o listener se houver hash na URL ao carregar
-    if (window.location.hash) {
-        // Pequeno timeout para garantir que o DOM esteja pronto
-        setTimeout(handleHashChange, 0);
-    }
-    // Adiciona listener para futuras mudanças de hash (se links internos na página mudarem o hash)
-    window.addEventListener('hashchange', handleHashChange, false);
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange, false);
-    };
+    const handleHashChange = () => { if (window.location.hash) { const element = document.getElementById(window.location.hash.substring(1)); if (element) { const headerOffset = 80; const elementPosition = element.getBoundingClientRect().top + window.pageYOffset; const offsetPosition = elementPosition - headerOffset; window.scrollTo({ top: offsetPosition, behavior: "smooth" }); } } }; if (window.location.hash) setTimeout(handleHashChange, 0); window.addEventListener("hashchange", handleHashChange, false); return () => { window.removeEventListener("hashchange", handleHashChange, false); };
   }, []);
 
-  // Se precisar definir o título da página dinamicamente em um client component:
   useEffect(() => {
     document.title = 'Cirurgia Geral Detalhada | Dr. Felipe Poubel';
   }, []);
-
 
   return (
     <main className="py-12 sm:py-16 md:py-20 bg-white dark:bg-slate-800">
@@ -60,22 +33,21 @@ export default function CirurgiaGeralPage() {
           Cirurgia Geral
         </h1>
 
-        <article className="prose prose-slate dark:prose-invert lg:prose-lg max-w-none">
+        <article className="prose prose-slate dark:prose-invert lg:prose-lg max-w-none"> {/* As classes prose podem ser removidas se você estilizar tudo manualmente */}
           
-          <p className="lead text-lg !text-slate-700 dark:!text-slate-300 leading-relaxed" data-aos="fade-up"> {/* Adicionei !text- para priorizar sobre o prose se necessário */}
+          <p className="lead text-lg !text-slate-700 dark:!text-slate-300 leading-relaxed" data-aos="fade-up">
             A Cirurgia Geral é a especialidade médica que se dedica ao diagnóstico e tratamento cirúrgico de diversas doenças.
           </p>
           <hr className="my-8 sm:my-10" data-aos="fade-up" />
 
           {/* TEMA 1: PEDRA NA VESÍCULA (COLELITÍASE) */}
           <section id="pedra-na-vesicula" className="mb-16 scroll-mt-28 md:scroll-mt-24">
-            <h2 className="text-3xl font-semibold text-slate-800 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700 pb-2 mb-8" data-aos="fade-up"> {/* Aumentei o mb do h2 */}
+            <h2 className="text-3xl font-semibold text-slate-800 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700 pb-2 mb-8" data-aos="fade-up">
               Pedra na Vesícula (Colelitíase) — O que é e como tratar?
             </h2>
-          
-            <div className="grid md:grid-cols-12 gap-x-8 gap-y-8 items-start"> {/* Aumentei o gap-y */}
+            <div className="grid md:grid-cols-12 gap-x-8 gap-y-8 items-start">
               <div className="md:col-span-5" data-aos="fade-right" data-aos-delay="100">
-                <div className="relative w-full h-64 sm:h-72 md:h-60 lg:h-80 xl:h-96 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200 dark:ring-slate-700 hover:scale-105 transition-transform duration-300"> {/* Alturas ajustadas e transição adicionada */}
+                <div className="relative w-full h-64 sm:h-72 md:h-60 lg:h-80 xl:h-96 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200 dark:ring-slate-700 hover:scale-105 transition-transform duration-300">
                   <Image
                     src="/colelitiase.png"
                     alt="Ilustração médica de pedra na vesícula mostrando anatomia"
@@ -85,23 +57,17 @@ export default function CirurgiaGeralPage() {
                   />
                 </div>
               </div>
-          
               <div className="md:col-span-7 space-y-6" data-aos="fade-left" data-aos-delay="200">
-                {/* Subtópico: O que é? */}
                 <div>
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-2">
-                    {/* Se Check for um componente: <Check className="text-emerald-500 w-5 h-5" /> */}
                     <span className="text-emerald-500 text-2xl">✅</span> O que é pedra na vesícula?
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     A vesícula biliar armazena a bile, líquido essencial para a digestão de gorduras. Quando a bile fica muito concentrada ou desequilibrada, podem se formar pequenas pedras (cálculos) dentro dela.
                   </p>
                 </div>
-          
-                {/* Subtópico: Sintomas */}
                 <div>
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-2">
-                    {/* Se Search for um componente: <Search className="text-blue-500 w-5 h-5" /> */}
                     <span className="text-blue-500 text-2xl">🔍</span> Sintomas
                   </h3>
                   <ul className="space-y-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed pl-1">
@@ -111,11 +77,8 @@ export default function CirurgiaGeralPage() {
                     <li className="flex items-start gap-2"><span className="text-emerald-500 mt-1">●</span><span>Casos graves: inflamação (colecistite) ou outras complicações.</span></li>
                   </ul>
                 </div>
-          
-                {/* Subtópico: Riscos (Bloco Destacado) */}
                 <div className="bg-yellow-50 dark:bg-yellow-800/30 border border-yellow-300 dark:border-yellow-700/50 rounded-xl p-4 shadow">
                   <h3 className="text-lg font-semibold text-yellow-700 dark:text-yellow-300 flex items-center gap-2 mb-2">
-                    {/* Se AlertTriangle for um componente: <AlertTriangle className="text-yellow-600 w-5 h-5" /> */}
                     <span className="text-yellow-600 text-2xl">⚠️</span> Tem risco?
                   </h3>
                   <p className="text-sm text-yellow-800 dark:text-yellow-200 leading-relaxed mb-1">Se não tratar, as pedras podem causar complicações sérias como:</p>
@@ -125,11 +88,8 @@ export default function CirurgiaGeralPage() {
                     <li>Pancreatite (inflamação do pâncreas).</li>
                   </ul>
                 </div>
-          
-                {/* Subtópico: Tratamento */}
                 <div>
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-2">
-                    {/* Se Lightbulb for um componente: <Lightbulb className="text-sky-500 w-5 h-5" /> */}
                     <span className="text-sky-500 text-2xl">💡</span> Tratamento
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -142,11 +102,8 @@ export default function CirurgiaGeralPage() {
           <hr className="my-10 sm:my-12" data-aos="fade-up" /> 
           {/* FIM DO TEMA 1 */}
 
-                    {/* ===================================================================== */}
-          {/* TEMA 2: HÉRNIAS ABDOMINAIS - CORES DE TÍTULO AJUSTADAS             */}
-          {/* ===================================================================== */}
-          <div id="hernia" className="mb-16 scroll-mt-28 md:scroll-mt-24">
-            {/* Título H2 agora usa text-slate-800/text-slate-100 como o da Pedra na Vesícula */}
+          {/* TEMA 2: HÉRNIAS ABDOMINAIS */}
+          <section id="hernia" className="mb-16 scroll-mt-28 md:scroll-mt-24">
             <h2 className="text-3xl font-semibold text-slate-800 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700 pb-2 mb-8" data-aos="fade-up">
               Hérnias Abdominais — O que são e como tratar?
             </h2>
@@ -162,10 +119,7 @@ export default function CirurgiaGeralPage() {
                   />
                 </div>
               </div>
-
               <div className="md:col-span-7 space-y-6" data-aos="fade-left" data-aos-delay="200">
-
-                {/* Subtópicos H3 agora usam text-slate-700/text-slate-200 */}
                 <div className="p-4 bg-white dark:bg-slate-700/50 rounded-lg shadow-lg">
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-2">
                     <span className="text-emerald-500 text-2xl">✅</span> O que é hérnia?
@@ -174,7 +128,6 @@ export default function CirurgiaGeralPage() {
                     Hérnia é um abaulamento (caroço) que surge no corpo, comummente na barriga ou virilha. Ocorre quando parte de um órgão interno (como gordura ou intestino) se projeta através de uma área enfraquecida nos músculos. Esse abaulamento pode aumentar com esforço, tosse ou ao ficar de pé.
                   </p>
                 </div>
-
                 <div className="p-4 bg-white dark:bg-slate-700/50 rounded-lg shadow-lg">
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-2">
                     <span className="text-blue-500 text-2xl">🔍</span> Sintomas Comuns
@@ -185,7 +138,6 @@ export default function CirurgiaGeralPage() {
                     <li>Em casos graves (hérnia encarcerada ou estrangulada), pode ocorrer dor intensa e contínua, náuseas, vômitos e alterações no trânsito intestinal, configurando uma urgência médica.</li>
                   </ul>
                 </div>
-
                 <div className="bg-yellow-50 dark:bg-yellow-800/30 border border-yellow-300 dark:border-yellow-700/50 rounded-xl p-4 shadow">
                   <h3 className="text-lg font-semibold text-yellow-700 dark:text-yellow-300 flex items-center gap-2 mb-2">
                     <span className="text-yellow-600 text-2xl">⚠️</span> Tem risco?
@@ -194,7 +146,6 @@ export default function CirurgiaGeralPage() {
                     Embora nem toda hérnia seja uma emergência, ela não se cura sozinha. O principal risco é o estrangulamento, onde o conteúdo da hérnia fica preso e tem seu suprimento sanguíneo cortado. Esta é uma complicação grave que exige cirurgia de emergência para evitar danos aos órgãos.
                   </p>
                 </div>
-
                 <div className="p-4 bg-white dark:bg-slate-700/50 rounded-lg shadow-lg">
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2 mb-2">
                     <span className="text-sky-500 text-2xl">💡</span> Tratamento
@@ -210,15 +161,12 @@ export default function CirurgiaGeralPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </section>
           <hr className="my-10 sm:my-12" data-aos="fade-up" /> 
           {/* FIM DO TEMA 2 */}
 
-          {/* ===================================================================== */}
-          {/* TEMA 3: OUTROS PROCEDIMENTOS - CORES DE TÍTULO AJUSTADAS         */}
-          {/* ===================================================================== */}
-          <div id="outras-doencas" className="mb-16 scroll-mt-28 md:scroll-mt-24">
-            {/* Título H2 agora usa text-slate-800/text-slate-100 */}
+          {/* TEMA 3: OUTROS PROCEDIMENTOS CIRÚRGICOS COMUNS */}
+          <section id="outras-doencas" className="mb-16 scroll-mt-28 md:scroll-mt-24">
             <h2 className="text-3xl font-semibold text-slate-800 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700 pb-2 mb-8" data-aos="fade-up">
               <span className="mr-2">🩺</span>Outros Procedimentos Cirúrgicos Comuns
             </h2>
@@ -234,13 +182,10 @@ export default function CirurgiaGeralPage() {
                   />
                 </div>
               </div>
-
               <div className="md:col-span-7 space-y-6" data-aos="fade-left" data-aos-delay="200">
                 <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   Além das cirurgias de hérnia e pedra na vesícula, também realizo procedimentos cirúrgicos comuns na prática médica, que visam melhorar a qualidade de vida dos pacientes, muitas vezes de forma simples, rápida e com recuperação tranquila.
                 </p>
-
-                {/* Subtópicos H3 agora usam text-slate-700/text-slate-200 */}
                 <div className="p-4 bg-white dark:bg-slate-700/50 rounded-lg shadow-lg">
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-2">
                     Fimose (Postectomia/Circuncisão)
@@ -249,7 +194,6 @@ export default function CirurgiaGeralPage() {
                     Procedimento realizado para tratar a dificuldade de exposição da glande, melhorando a higiene, prevenindo infecções e, muitas vezes, contribuindo para o conforto e bem-estar na vida adulta.
                   </p>
                 </div>
-
                 <div className="p-4 bg-white dark:bg-slate-700/50 rounded-lg shadow-lg">
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-2">
                     Cisto Pilonidal
@@ -258,7 +202,6 @@ export default function CirurgiaGeralPage() {
                     Remoção de cisto ou abscesso que aparece na região do cóccix (região sacral), geralmente causado pelo encravamento de pelos. Pode gerar dor, inflamação e secreção. O tratamento é cirúrgico, removendo o cisto e permitindo a cicatrização adequada.
                   </p>
                 </div>
-
                 <div className="p-4 bg-white dark:bg-slate-700/50 rounded-lg shadow-lg">
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-2">
                     Hidrocele
@@ -267,7 +210,6 @@ export default function CirurgiaGeralPage() {
                     É o acúmulo de líquido ao redor do testículo, formando um aumento de volume na bolsa escrotal. O tratamento é feito por meio de cirurgia simples, geralmente com alta no mesmo dia, devolvendo conforto e qualidade de vida.
                   </p>
                 </div>
-
                 <div className="p-4 bg-white dark:bg-slate-700/50 rounded-lg shadow-lg">
                   <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-2">
                     Vasectomia
@@ -276,24 +218,23 @@ export default function CirurgiaGeralPage() {
                     Método seguro e definitivo de contracepção masculina. Procedimento rápido, realizado de forma ambulatorial, que interrompe a passagem dos espermatozoides, sem afetar a função sexual, potência ou produção hormonal.
                   </p>
                 </div>
-
                 <p className="mt-6 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   👉 Todas essas cirurgias podem ser feitas com técnicas modernas, minimamente invasivas sempre que possível, com foco em segurança, menor dor no pós-operatório e retorno rápido às atividades.
                 </p>
               </div>
             </div>
-          </div>
+          </section>
           {/* FIM DO TEMA 3 */}
           
-        </article>
+        </article> {/* Fechamento da tag <article> */}
 
         <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700 text-center" data-aos="fade-up">
-          <a
+          <Link
             href="/#localizacao" 
-            className="inline-block rounded-lg bg-blue-600 px-8 py-4 text-base sm:text-lg font-semibold text-white shadow-xl hover:bg-blue-700 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-transform duration-150 ease-in-out hover:scale-105"
+            className="inline-block rounded-lg bg-blue-600 px-8 py-4 text-base sm:text-lg font-semibold text-white shadow-xl hover:bg-blue-700 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-colors"
           >
             Agendar Consulta ou Saber Mais
-          </a>
+          </Link>
         </div>
 
       </div>
