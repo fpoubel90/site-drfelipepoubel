@@ -2,9 +2,9 @@ export const siteUrl = "https://drfelipepoubel.com.br";
 
 export const physician = {
   publicName: "Dr. Felipe Poubel",
-  fullNameMarker: "[nome completo]",
-  crmMarker: "[CRM-XX 00000]",
-  rqeMarker: "[RQE 00000]",
+  fullName: "Felipe Poubel Timm do Carmo",
+  crm: "CRM-ES 13423",
+  rqe: "RQE 11122 – Cirurgia Geral",
 };
 
 export const defaultDescription =
@@ -56,19 +56,6 @@ export const locations = [
     phoneHref: "https://wa.me/5527988806052",
     phoneSchema: "+55-27-98880-6052",
   },
-  {
-    id: "renascer",
-    name: "Edifício Renascer",
-    city: "Santa Maria de Jetibá",
-    lines: ["R. Herman Miertschink, 175 - Centro", "Santa Maria de Jetibá - ES, 29645-000"],
-    shortAddress: "R. Herman Miertschink, 175",
-    streetAddress: "R. Herman Miertschink, 175 - Centro",
-    locality: "Santa Maria de Jetibá",
-    postalCode: "29645-000",
-    phoneDisplay: "(27) 99950-5907",
-    phoneHref: "https://wa.me/5527999505907",
-    phoneSchema: "+55-27-99950-5907",
-  },
 ] as const;
 
 export const bio = {
@@ -86,33 +73,34 @@ export const areas = [
     href: "/areas/cirurgia-geral",
     title: "Cirurgia geral",
     image: "/cirurgiageral.jpeg",
-    imageAlt: "Ilustração relacionada à cirurgia geral",
+    imageAlt: "Ilustração de uma sala de cirurgia",
+    illustrative: false,
     summary:
       "A Cirurgia Geral é a especialidade médica que se dedica ao diagnóstico e tratamento cirúrgico de diversas doenças.",
   },
   {
-    href: "/areas/dermatologia",
-    title: "Dermatologia",
+    href: "/areas/cuidados-com-a-pele",
+    title: "Cuidados com a pele",
     image: "/dermatoscopio.png",
-    imageAlt: "Dermatoscópio usado no exame de lesões da pele",
-    summary:
-      "Cuidados com a pele e manejo de lesões cutâneas, a partir da prática e das pós-graduações já descritas no site.",
+    imageAlt: "Ilustração educativa de um exame de pinta com dermatoscópio",
+    illustrative: true,
+    summary: "Atua em cuidados com a pele e em cirurgia dermatológica.",
   },
   {
     href: "/areas/cirurgia-dermatologica",
     title: "Cirurgia dermatológica",
     image: "/consultorio.png",
-    imageAlt: "Consultório onde são feitas pequenas cirurgias de pele",
-    summary:
-      "Procedimentos dermatológicos e pequenas cirurgias realizados em consultório.",
+    imageAlt: "Ilustração de atendimento em consultório",
+    illustrative: true,
+    summary: "Pequenas cirurgias de pele realizadas em consultório.",
   },
   {
     href: "/areas/cancer-de-pele",
     title: "Câncer de pele",
     image: "/melanoma.png",
-    imageAlt: "Imagem clínica ilustrativa de lesão pigmentada da pele",
-    summary:
-      "O que é, seus tipos, como identificar, prevenir e opções de tratamento.",
+    imageAlt: "Ilustração educativa de lesão pigmentada da pele",
+    illustrative: true,
+    summary: "O que é, seus tipos, como identificar, prevenir e opções de tratamento.",
   },
 ] as const;
 
@@ -120,7 +108,8 @@ export function physicianJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Physician",
-    name: physician.publicName,
+    name: physician.fullName,
+    alternateName: physician.publicName,
     url: siteUrl,
     image: `${siteUrl}/VIT_7655.jpg`,
     medicalSpecialty: "Cirurgia Geral",

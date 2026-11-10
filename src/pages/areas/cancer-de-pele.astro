@@ -1,4 +1,5 @@
 ---
+import IllustrativeImage from "../../components/IllustrativeImage.astro";
 import Base from "../../layouts/Base.astro";
 import Cta from "../../components/Cta.astro";
 import { prevencao, tiposDeCancer, tratamentos } from "../../data/cancer-de-pele";
@@ -29,23 +30,25 @@ const description =
         <section id={item.id} class="mt-12 scroll-mt-24 border-t border-slate-200 pt-8">
           <div class="grid items-start gap-8 md:grid-cols-12">
             <div class="md:col-span-5">
-              <img
-                src={item.image}
-                alt={item.imageAlt}
-                width="800"
-                height="800"
-                class="aspect-square w-full rounded-2xl object-cover shadow-lg"
-                loading="lazy"
-              />
-              {item.id === "melanoma" && (
-                <img
-                  src="/abcde.png"
-                  alt="Diagrama da regra ABCDE do melanoma: assimetria, bordas, cores, diâmetro e evolução"
-                  width="800"
-                  height="450"
-                  class="mt-6 w-full rounded-lg bg-white object-contain shadow"
-                  loading="lazy"
+              <div class="overflow-hidden rounded-2xl shadow-lg">
+                <IllustrativeImage
+                  src={item.image}
+                  alt={item.imageAlt}
+                  width={800}
+                  height={800}
+                  imgClass="aspect-square w-full object-cover"
                 />
+              </div>
+              {item.id === "melanoma" && (
+                <div class="mt-6 overflow-hidden rounded-lg shadow">
+                  <IllustrativeImage
+                    src="/abcde.png"
+                    alt="Diagrama educativo da regra ABCDE do melanoma. Ilustração, sem foto de paciente."
+                    width={800}
+                    height={450}
+                    imgClass="w-full bg-white object-contain"
+                  />
+                </div>
               )}
             </div>
             <div class="md:col-span-7">

@@ -2,7 +2,7 @@
 
 Site profissional estático do Dr. Felipe Poubel, feito em [Astro](https://astro.build) e Tailwind. O domínio previsto é [drfelipepoubel.com.br](https://drfelipepoubel.com.br). A hospedagem alvo é o Cloudflare Pages, no plano gratuito.
 
-Os textos de formação, os locais de atendimento e os telefones vieram do site antigo em Next.js. Onde o dado não está confirmado, a página mostra um marcador amarelo, como `[CRM-XX 00000]`.
+Os textos de formação e os locais de atendimento vieram do site antigo. O responsável técnico é Felipe Poubel Timm do Carmo, CRM-ES 13423, RQE 11122 – Cirurgia Geral. Ele atua em cuidados com a pele e em cirurgia dermatológica, sem registro de especialista em dermatologia.
 
 ## Requisitos
 
@@ -77,7 +77,7 @@ O arquivo `public/_redirects` manda os endereços antigos para as páginas novas
 
 ## Conformidade
 
-O rodapé de todas as páginas traz o nome, o CRM/UF, o RQE e a frase de responsável técnico. Enquanto CRM, RQE e nome completo não forem confirmados, esses campos ficam como marcadores. Não publique número de registro no lugar do marcador sem conferir o cadastro no conselho.
+O rodapé de todas as páginas traz o nome completo, CRM-ES 13423, RQE 11122 – Cirurgia Geral e a frase de responsável técnico.
 
 O conteúdo evita promessa de resultado, depoimento de paciente e foto de antes e depois.
 

@@ -28,14 +28,3 @@ summary::-webkit-details-marker {
 summary {
   list-style: none;
 }
-
-.marker {
-  display: inline-block;
-  margin-inline: 0.15rem;
-  border-radius: 0.25rem;
-  background: #fcd34d;
-  padding: 0.05rem 0.4rem;
-  font-weight: 700;
-  color: #1c1917;
-  box-shadow: inset 0 0 0 1px #b45309;
-}

@@ -1,4 +1,5 @@
 ---
+import IllustrativeImage from "../../components/IllustrativeImage.astro";
 import Base from "../../layouts/Base.astro";
 import Cta from "../../components/Cta.astro";
 import { cirurgiaDermatologicaIntro, procedimentosDermatologicos } from "../../data/cirurgia-dermatologica";
@@ -20,13 +21,12 @@ const description =
       {
         procedimentosDermatologicos.map((item) => (
           <li id={item.id} class="scroll-mt-24 overflow-hidden rounded-xl bg-white shadow-xl">
-            <img
+            <IllustrativeImage
               src={item.image}
               alt={item.imageAlt}
-              width="640"
-              height="360"
-              class="aspect-video w-full object-cover"
-              loading="lazy"
+              width={640}
+              height={360}
+              imgClass="aspect-video w-full object-cover"
             />
             <div class="p-5">
               <h2 class="text-lg font-semibold text-rose-900">{item.title}</h2>

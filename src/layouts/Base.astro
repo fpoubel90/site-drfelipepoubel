@@ -20,7 +20,8 @@ const {
   jsonLd,
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, siteUrl).href.replace(/\/$/, "") || siteUrl;
+const path = Astro.url.pathname.replace(/\.html$/, "").replace(/\/$/, "") || "/";
+const canonical = new URL(path, siteUrl).href.replace(/\/$/, "") || siteUrl;
 const imageUrl = new URL(image, siteUrl).href;
 const fullTitle = title.includes("Felipe Poubel") ? title : `${title} | Dr. Felipe Poubel`;
 ---

@@ -1,5 +1,4 @@
 ---
-import Marker from "./Marker.astro";
 import { locations, nav, physician, social } from "../data/site";
 
 const year = new Date().getFullYear();
@@ -7,7 +6,7 @@ const year = new Date().getFullYear();
 
 <footer class="mt-auto border-t border-stone-300 bg-stone-100 text-slate-700">
   <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {
         locations.map((place) => (
           <div>
@@ -48,19 +47,15 @@ const year = new Date().getFullYear();
 
     <div class="mt-8 border-t border-stone-300 pt-6 text-sm leading-relaxed text-slate-900">
       <p>
-        <strong>{physician.publicName}</strong>
-        <Marker>{physician.fullNameMarker}</Marker>
+        <strong>{physician.fullName}</strong>
       </p>
       <p class="mt-1">
-        CRM/UF <Marker>{physician.crmMarker}</Marker>
+        {physician.crm}
         <span aria-hidden="true"> · </span>
-        RQE <Marker>{physician.rqeMarker}</Marker>
+        {physician.rqe}
       </p>
       <p class="mt-2">
-        Responsável técnico por este site: {physician.publicName}
-        <Marker>{physician.fullNameMarker}</Marker>, CRM/UF
-        <Marker>{physician.crmMarker}</Marker>, RQE
-        <Marker>{physician.rqeMarker}</Marker>.
+        Responsável técnico por este site: {physician.fullName}, {physician.crm}, {physician.rqe}.
       </p>
       <p class="mt-2 max-w-3xl text-slate-700">
         Conteúdo informativo, sem promessa de resultado. Não substitui a consulta médica.
@@ -72,9 +67,9 @@ const year = new Date().getFullYear();
         <img
           src="/Logo_felipe_poubel%20sem%20fundo.png"
           alt=""
-          width="100"
-          height="71"
-          class="h-14 w-auto"
+          width="220"
+          height="107"
+          class="h-12 w-auto"
         />
       </a>
       <p>© {year} Dr. Felipe Poubel. Todos os direitos reservados.</p>

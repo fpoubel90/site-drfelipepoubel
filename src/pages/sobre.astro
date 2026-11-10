@@ -1,10 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
-import Marker from "../components/Marker.astro";
 import { bio, physician } from "../data/site";
 
 const description =
-  "Formação e prática do Dr. Felipe Poubel: medicina pela EMESCAM, residência em cirurgia geral na Santa Casa de Misericórdia de Vitória e pós-graduações em cuidados com a pele.";
+  "Felipe Poubel Timm do Carmo, CRM-ES 13423, RQE 11122 – Cirurgia Geral. Formação pela EMESCAM, residência em cirurgia geral e atuação em cuidados com a pele.";
 ---
 
 <Base title="Sobre" description={description}>
@@ -19,11 +18,9 @@ const description =
       />
       <div>
         <h1 class="text-4xl font-bold text-slate-900">{physician.publicName}</h1>
-        <p class="mt-3 text-base text-slate-800">
-          CRM/UF <Marker>{physician.crmMarker}</Marker>
-          <span aria-hidden="true"> | </span>
-          RQE <Marker>{physician.rqeMarker}</Marker>
-        </p>
+        <p class="mt-3 text-lg font-semibold text-slate-900">{physician.fullName}</p>
+        <p class="mt-2 text-base text-slate-800">{physician.crm}</p>
+        <p class="text-base font-semibold text-slate-900">{physician.rqe}</p>
         <p class="mt-6 text-lg leading-relaxed text-slate-700">{bio.formation}</p>
         <p class="mt-4 text-lg leading-relaxed text-slate-700">{bio.practice}</p>
         <p class="mt-4 text-lg leading-relaxed text-slate-700">{bio.mission}</p>

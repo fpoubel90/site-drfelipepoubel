@@ -3,7 +3,7 @@ export const tiposDeCancer = [
     id: "cbc",
     title: "Carcinoma basocelular (CBC)",
     image: "/cbc.png",
-    imageAlt: "Imagem clínica de um carcinoma basocelular",
+    imageAlt: "Ilustração educativa de carcinoma basocelular",
     subtext: "Mais comum, menos agressivo.",
     paragraphs: [
       "Apresenta crescimento lento e raramente causa metástase (espalha para outros órgãos).",
@@ -14,7 +14,7 @@ export const tiposDeCancer = [
     id: "cec",
     title: "Carcinoma espinocelular (CEC)",
     image: "/cec.png",
-    imageAlt: "Imagem clínica de um carcinoma espinocelular",
+    imageAlt: "Ilustração educativa de carcinoma espinocelular",
     subtext: "Mais agressivo que o CBC.",
     paragraphs: [
       "Pode gerar metástase se não for tratado precocemente.",
@@ -26,7 +26,7 @@ export const tiposDeCancer = [
     id: "melanoma",
     title: "Melanoma",
     image: "/melanoma.png",
-    imageAlt: "Imagem clínica de um melanoma",
+    imageAlt: "Ilustração educativa de melanoma",
     subtext: "O mais grave e perigoso dos cânceres de pele.",
     paragraphs: [
       "Possui alta chance de metástase se não for diagnosticado e tratado em seus estágios iniciais.",
@@ -44,7 +44,7 @@ export const tiposDeCancer = [
     id: "lesoes-precancerigenas",
     title: "Lesões pré-cancerígenas",
     image: "/ceratose-actinica.png",
-    imageAlt: "Imagem clínica de queratose actínica",
+    imageAlt: "Ilustração educativa de queratose actínica",
     subtext: "Queratose actínica (QA) — lesão precursora do CEC.",
     paragraphs: [
       "São lesões cutâneas ásperas ao toque (semelhantes a uma lixa), geralmente avermelhadas ou da cor da pele, que podem apresentar descamação.",

@@ -1,9 +1,10 @@
 ---
+import IllustrativeImage from "../components/IllustrativeImage.astro";
 import Base from "../layouts/Base.astro";
 import { areas, bio, locations, physician, physicianJsonLd } from "../data/site";
 
 const description =
-  "Dr. Felipe Poubel. Cirurgia geral e cuidados com a pele, com atendimento em Laranja da Terra, Afonso Cláudio e Santa Maria de Jetibá, no Espírito Santo.";
+  "Dr. Felipe Poubel, especialista em cirurgia geral. Cuidados com a pele e atendimento em Laranja da Terra e Afonso Cláudio, no Espírito Santo.";
 ---
 
 <Base
@@ -55,14 +56,24 @@ const description =
           areas.map((area) => (
             <li>
               <a href={area.href} class="group block overflow-hidden rounded-lg bg-stone-50 shadow-md">
-                <img
-                  src={area.image}
-                  alt={area.imageAlt}
-                  width="500"
-                  height="500"
-                  class="aspect-square w-full object-cover"
-                  loading="lazy"
-                />
+                {area.illustrative ? (
+                  <IllustrativeImage
+                    src={area.image}
+                    alt={area.imageAlt}
+                    width={500}
+                    height={500}
+                    imgClass="aspect-square w-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={area.image}
+                    alt={area.imageAlt}
+                    width="500"
+                    height="500"
+                    class="aspect-square w-full object-cover"
+                    loading="lazy"
+                  />
+                )}
                 <span class="block p-4 text-xl font-bold text-slate-900 group-hover:text-blue-800">
                   {area.title}
                 </span>

@@ -4,7 +4,7 @@ import LocationCard from "../components/LocationCard.astro";
 import { locations, social } from "../data/site";
 
 const description =
-  "Contato e locais de atendimento do Dr. Felipe Poubel: Clínica Lustig, Hospital São Vicente de Paulo e Edifício Renascer, no Espírito Santo.";
+  "Contato e locais de atendimento do Dr. Felipe Poubel: Clínica Lustig, em Laranja da Terra, e Hospital São Vicente de Paulo, em Afonso Cláudio.";
 ---
 
 <Base title="Contato" description={description}>
@@ -15,7 +15,7 @@ const description =
         Atendo em diferentes locais para sua maior conveniência.
       </p>
     </header>
-    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
       {locations.map((place) => <LocationCard place={place} />)}
     </div>
     <section class="mx-auto mt-12 max-w-3xl rounded-xl bg-white p-6 shadow-xl" aria-labelledby="redes-titulo">
