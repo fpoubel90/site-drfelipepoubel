@@ -1,0 +1,130 @@
+---
+title: "Sinais de alerta do melanoma: o que significa o ABCDE"
+description: "Entenda a regra do ABCDE e o sinal do patinho feio, saiba como observar suas pintas em casa e quando procurar o médico."
+date: 2026-11-10
+tags:
+  - melanoma
+  - câncer de pele
+  - pintas
+  - autoexame da pele
+  - prevenção
+audience: leigos
+draft: false
+---
+
+O melanoma é um tipo de câncer de pele que merece atenção especial, e vale a pena saber olhar para as próprias pintas. A regra do ABCDE é um jeito simples de lembrar o que observar e ajuda a decidir quando mostrar uma pinta ao médico.
+
+## O que é o melanoma?
+
+O melanoma é um câncer que começa nos melanócitos, as células que produzem o pigmento que dá cor à pele [1, 2]. Ele pode aparecer como uma pinta nova ou como uma mudança numa pinta que a pessoa já tinha [1, 3].
+
+Entre os cânceres de pele, o melanoma responde pela maior parte das mortes, segundo diretrizes médicas americanas e europeias [2, 4]. Esse dado não é motivo de pânico. Ele só mostra por que vale a pena prestar atenção na pele.
+
+## Por que descobrir cedo faz diferença?
+
+Quando o melanoma é examinado em laboratório, uma das medidas mais importantes é a espessura do tumor, chamada de espessura de Breslow. Ela é usada para definir o estágio da doença e ajuda a orientar o tratamento [1, 5].
+
+De forma geral, melanomas mais finos, encontrados no começo, têm prognóstico melhor do que os mais espessos [4, 5]. Por isso, quanto antes uma pinta suspeita for avaliada, melhor.
+
+## O que significa o ABCDE?
+
+O ABCDE é uma regra criada para ajudar médicos e leigos a reconhecer pintas que merecem avaliação [3, 6]. Cada letra indica uma característica:
+
+- **A de Assimetria:** se você imaginar uma linha no meio da pinta, as duas metades não ficam parecidas.
+- **B de Bordas:** as bordas são irregulares, recortadas ou mal definidas, em vez de lisas e redondas.
+- **C de Cores:** a pinta tem mais de uma cor ou uma mistura de tons, em vez de uma cor só.
+- **D de Diâmetro:** a pinta tem mais de 6 milímetros, mais ou menos o tamanho da borracha na ponta de um lápis.
+- **E de Evolução:** a pinta muda com o tempo, de tamanho, de forma ou de cor.
+
+A regra começou só com ABCD. A letra E foi acrescentada depois, porque as pesquisas mostraram que a mudança de uma pinta ao longo do tempo é um sinal importante [3, 6]. Uma pinta nova ou que mudou recentemente merece mais atenção [1, 3].
+
+## O ABCDE funciona para todos os casos?
+
+Não. A regra ajuda, mas tem limites [6]. Alguns melanomas não seguem o padrão, e uma pinta pode ter alguma dessas características e ser benigna.
+
+Há também melanomas com pouco ou nenhum pigmento, chamados de amelanóticos. A aparência deles varia bastante e pode lembrar lesões benignas, o que dificulta o reconhecimento [1, 7]. Por isso, o ABCDE serve como alerta, e não para tirar conclusões em casa.
+
+## O que é o sinal do patinho feio?
+
+Em geral, as pintas de uma mesma pessoa se parecem entre si. O sinal do patinho feio é a pinta que destoa das outras: é mais escura, maior, tem formato diferente ou simplesmente "não combina" com o resto [8].
+
+Em estudos, os melanomas costumavam ser justamente essas pintas diferentes [8]. Num deles, até pessoas sem formação em saúde reconheceram bem esses patinhos feios [8]. Num estudo com pessoas leigas, quem aprendeu o sinal do patinho feio acertou mais do que quem aprendeu só o ABCD, e os autores sugerem ensinar os dois juntos [9].
+
+## Que outros sinais merecem atenção?
+
+Além do ABCDE e do patinho feio, fique atento a:
+
+- **Pinta nova que surge na vida adulta**, principalmente se continua mudando [1, 3];
+- **Faixa escura nova ao longo da unha**, marrom ou preta. Ela tem muitas causas benignas, mas também é a forma mais comum de o melanoma da unha aparecer [10, 11];
+- **Lesão sem cor escura que cresce ou muda**, já que alguns melanomas têm pouco pigmento [1, 7].
+
+## Quem tem mais risco de ter melanoma?
+
+Qualquer pessoa pode ter melanoma, mas o risco é maior em quem tem [1, 5, 12, 13]:
+
+- muitas pintas pelo corpo ou pintas atípicas (diferentes das comuns);
+- pele clara, que se queima com facilidade e quase não bronzeia;
+- sardas em grande quantidade, cabelo ruivo ou olhos claros;
+- histórico de queimaduras solares e exposição ao sol de forma intensa e esporádica, como em férias e fins de semana;
+- uso de bronzeamento artificial;
+- casos de melanoma na família;
+- história pessoal de câncer de pele ou de lesões pré-cancerígenas.
+
+## Como fazer o autoexame da pele?
+
+O autoexame ajuda a conhecer as próprias pintas e a perceber mudanças. Estudos encontraram uma associação entre fazer o autoexame e descobrir melanomas mais finos [14, 15]. Num desses estudos, olhar a pele com atenção a todas as áreas pesou mais do que a frequência do exame, e usar imagens de referência ajudou [14].
+
+Para fazer em casa:
+
+1. Escolha um lugar bem iluminado, com um espelho grande e um espelho de mão.
+2. Olhe o corpo todo, de frente e de costas, incluindo axilas, lateral do tronco e parte de trás das pernas.
+3. Não esqueça as áreas escondidas: couro cabeludo (use um pente ou peça ajuda), atrás das orelhas, entre os dedos, plantas dos pés, unhas e região genital.
+4. Compare as pintas entre si, procurando o patinho feio.
+5. Se quiser, anote ou fotografe as pintas que vai acompanhar, para comparar da próxima vez.
+
+Lembre que o autoexame tem limites. A pessoa pode deixar passar lesões, e ele não substitui a avaliação médica [15, 16].
+
+## O que o médico faz na consulta?
+
+O médico pergunta sobre o histórico e examina a pele. Muitas vezes usa a dermatoscopia, um exame feito com um aparelho parecido com uma lupa iluminada, que mostra estruturas da pinta que não aparecem a olho nu. Só olhar a pele pode deixar passar melanomas, e a dermatoscopia melhora a precisão da avaliação [2, 17].
+
+Se a pinta parecer suspeita, o médico indica uma biópsia: a lesão, ou parte dela, é retirada e enviada para análise em laboratório. É esse exame que confirma ou descarta o melanoma [2, 4, 5].
+
+## Quando procurar o médico?
+
+Marque uma consulta se você notar:
+
+- uma pinta com uma ou mais características do ABCDE;
+- uma pinta que mudou de tamanho, forma ou cor;
+- uma pinta nova na vida adulta;
+- uma pinta diferente de todas as outras (o patinho feio);
+- uma faixa escura nova na unha;
+- qualquer lesão na pele que preocupe você.
+
+Se você tem fatores de risco, como muitas pintas ou casos na família, pergunte ao seu médico de quanto em quanto tempo deve examinar a pele. Ter um sinal de alerta não significa ter câncer, mas significa que a pinta precisa ser vista de perto por um médico.
+
+## Referências
+
+1. Joshi UM, et al. Cutaneous Melanoma: A Review. JAMA. 2025. [PMID 40853557](https://pubmed.ncbi.nlm.nih.gov/40853557/)
+2. Garbe C, et al. European consensus-based interdisciplinary guideline for melanoma. Part 1: Diagnostics - Update 2024. Eur J Cancer. 2025. [PMID 39700658](https://pubmed.ncbi.nlm.nih.gov/39700658/)
+3. Abbasi NR, et al. Early diagnosis of cutaneous melanoma: revisiting the ABCD criteria. JAMA. 2004. [PMID 15585738](https://pubmed.ncbi.nlm.nih.gov/15585738/)
+4. Swetter SM, et al. Guidelines of care for the management of primary cutaneous melanoma. J Am Acad Dermatol. 2019. [PMID 30392755](https://pubmed.ncbi.nlm.nih.gov/30392755/)
+5. Lauters R, et al. Melanoma: Diagnosis and Treatment. Am Fam Physician. 2024. [PMID 39418569](https://pubmed.ncbi.nlm.nih.gov/39418569/)
+6. American Academy of Dermatology Ad Hoc Task Force for the ABCDEs of Melanoma. Early detection of melanoma: reviewing the ABCDEs. J Am Acad Dermatol. 2015. [PMID 25698455](https://pubmed.ncbi.nlm.nih.gov/25698455/)
+7. Gong HZ, et al. Amelanotic melanoma. Melanoma Res. 2019. [PMID 30672881](https://pubmed.ncbi.nlm.nih.gov/30672881/)
+8. Scope A, et al. The "ugly duckling" sign: agreement between observers. Arch Dermatol. 2008. [PMID 18209169](https://pubmed.ncbi.nlm.nih.gov/18209169/)
+9. Ilyas M, et al. The role of the ugly duckling sign in patient education. J Am Acad Dermatol. 2017. [PMID 28964538](https://pubmed.ncbi.nlm.nih.gov/28964538/)
+10. Ricardo JW, et al. Evaluation and diagnosis of longitudinal melanonychia: A clinical review by a nail expert group. J Am Acad Dermatol. 2025. [PMID 40023404](https://pubmed.ncbi.nlm.nih.gov/40023404/)
+11. Conway J, et al. Adult and Pediatric Nail Unit Melanoma: Epidemiology, Diagnosis, and Treatment. Cells. 2023. [PMID 36980308](https://pubmed.ncbi.nlm.nih.gov/36980308/)
+12. Gandini S, et al. Meta-analysis of risk factors for cutaneous melanoma: II. Sun exposure. Eur J Cancer. 2005. [PMID 15617990](https://pubmed.ncbi.nlm.nih.gov/15617990/)
+13. Gandini S, et al. Meta-analysis of risk factors for cutaneous melanoma: III. Family history, actinic damage and phenotypic factors. Eur J Cancer. 2005. [PMID 16125929](https://pubmed.ncbi.nlm.nih.gov/16125929/)
+14. Pollitt RA, et al. Efficacy of skin self-examination practices for early melanoma detection. Cancer Epidemiol Biomarkers Prev. 2009. [PMID 19861521](https://pubmed.ncbi.nlm.nih.gov/19861521/)
+15. Carli P, et al. Dermatologist detection and skin self-examination are associated with thinner melanomas: results from a survey of the Italian Multidisciplinary Group on Melanoma. Arch Dermatol. 2003. [PMID 12756097](https://pubmed.ncbi.nlm.nih.gov/12756097/)
+16. Hamidi R, et al. Efficacy of skin self-examination for the early detection of melanoma. Int J Dermatol. 2010. [PMID 20465635](https://pubmed.ncbi.nlm.nih.gov/20465635/)
+17. Dinnes J, et al. Dermoscopy, with and without visual inspection, for diagnosing melanoma in adults. Cochrane Database Syst Rev. 2018. [PMID 30521682](https://pubmed.ncbi.nlm.nih.gov/30521682/)
+
+---
+
+**Dr. Felipe Poubel — Médico, Cirurgião Geral — CRM-ES 13423 | RQE 11122**
+
+*Conteúdo informativo e educativo. Não substitui a consulta médica, o diagnóstico ou o tratamento individual.*
