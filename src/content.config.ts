@@ -10,6 +10,14 @@ const blog = defineCollection({
     tags: z.array(z.string()),
     audience: z.enum(["leigos", "profissionais"]),
     draft: z.boolean().default(false),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+        width: z.number().int().positive(),
+        height: z.number().int().positive(),
+      })
+      .optional(),
   }),
 });
 

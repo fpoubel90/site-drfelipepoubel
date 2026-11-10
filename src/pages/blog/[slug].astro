@@ -1,6 +1,7 @@
 ---
 import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import IllustrativeImage from "../../components/IllustrativeImage.astro";
 import { audienceLabel, formatPostDate, getPublishedPosts } from "../../lib/blog";
 
 export async function getStaticPaths() {
@@ -15,7 +16,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Base title={post.data.title} description={post.data.description} ogType="article">
+<Base title={post.data.title} description={post.data.description} image={post.data.image?.src} ogType="article">
   <article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
     <p class="text-sm font-semibold text-blue-800"><a href="/blog">Blog</a></p>
     <h1 class="mt-3 text-4xl font-bold text-slate-900">{post.data.title}</h1>
@@ -37,6 +38,20 @@ const { Content } = await render(post);
         ))
       }
     </ul>
+    {
+      post.data.image && (
+        <div class="mt-8 overflow-hidden rounded-xl shadow-lg">
+          <IllustrativeImage
+            src={post.data.image.src}
+            alt={post.data.image.alt}
+            width={post.data.image.width}
+            height={post.data.image.height}
+            imgClass="h-auto w-full bg-white"
+            loading="eager"
+          />
+        </div>
+      )
+    }
     <div class="prose prose-slate mt-8 max-w-none">
       <Content />
     </div>

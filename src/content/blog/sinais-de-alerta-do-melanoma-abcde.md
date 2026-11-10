@@ -10,6 +10,11 @@ tags:
   - prevenção
 audience: leigos
 draft: false
+image:
+  src: /abcde-ilustracao.webp
+  alt: Ilustração da regra ABCDE e do sinal do patinho feio para observar pintas
+  width: 864
+  height: 1152
 ---
 
 O melanoma é um tipo de câncer de pele que merece atenção especial, e vale a pena saber olhar para as próprias pintas. A regra do ABCDE é um jeito simples de lembrar o que observar e ajuda a decidir quando mostrar uma pinta ao médico.
