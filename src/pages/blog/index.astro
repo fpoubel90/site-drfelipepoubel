@@ -1,0 +1,23 @@
+---
+import Base from "../../layouts/Base.astro";
+import BlogFilters from "../../components/BlogFilters.astro";
+import BlogList from "../../components/BlogList.astro";
+import { getPublishedPosts } from "../../lib/blog";
+
+const posts = await getPublishedPosts();
+const description =
+  "Artigos informativos do Dr. Felipe Poubel, separados para leigos e para profissionais. Rascunhos não são publicados.";
+---
+
+<Base title="Blog" description={description}>
+  <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+    <h1 class="text-4xl font-bold text-slate-900">Blog</h1>
+    <p class="mt-4 text-lg text-slate-700">
+      Textos informativos. Escolha o público. As tags de cada artigo também funcionam como categorias.
+    </p>
+    <div class="mt-8">
+      <BlogFilters audience="todos" />
+      <BlogList posts={posts} />
+    </div>
+  </div>
+</Base>

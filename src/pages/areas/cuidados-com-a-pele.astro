@@ -1,0 +1,39 @@
+---
+import IllustrativeImage from "../../components/IllustrativeImage.astro";
+import Base from "../../layouts/Base.astro";
+import { bio, physician } from "../../data/site";
+
+const description =
+  "Cuidados com a pele e cirurgia dermatológica na prática do Dr. Felipe Poubel, especialista em cirurgia geral (RQE 11122).";
+---
+
+<Base title="Cuidados com a pele" description={description}>
+  <article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+    <p class="text-sm font-semibold text-blue-800">
+      <a href="/areas">Áreas de atuação</a>
+    </p>
+    <h1 class="mt-3 text-4xl font-bold text-slate-900">Cuidados com a pele</h1>
+    <div class="mt-8 space-y-4 rounded-xl bg-white p-6 text-lg leading-relaxed text-slate-700 shadow-xl sm:p-8">
+      <p>
+        {physician.fullName} é especialista em Cirurgia Geral ({physician.rqe}). Também atua em cuidados com a pele e em cirurgia dermatológica.
+      </p>
+      <p>{bio.formation}</p>
+      <p>{bio.practice}</p>
+      <p>
+        Os textos sobre pele estão nas páginas de
+        <a class="font-semibold text-blue-800 hover:text-blue-900" href="/areas/cirurgia-dermatologica">cirurgia dermatológica</a>
+        e de
+        <a class="font-semibold text-blue-800 hover:text-blue-900" href="/areas/cancer-de-pele">câncer de pele</a>.
+      </p>
+    </div>
+    <div class="mt-8 overflow-hidden rounded-xl shadow-lg">
+      <IllustrativeImage
+        src="/dermatoscopio.png"
+        alt="Ilustração educativa de um exame de pinta com dermatoscópio"
+        width="800"
+        height="600"
+        imgClass="w-full object-cover"
+      />
+    </div>
+  </article>
+</Base>

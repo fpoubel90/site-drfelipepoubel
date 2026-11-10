@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dr. Felipe Poubel
 
-## Getting Started
+Site profissional estático do Dr. Felipe Poubel, feito em [Astro](https://astro.build) e Tailwind. O domínio previsto é [drfelipepoubel.com.br](https://drfelipepoubel.com.br). A hospedagem alvo é o Cloudflare Pages, no plano gratuito.
 
-First, run the development server:
+Os textos de formação e os locais de atendimento vieram do site antigo. O responsável técnico é Felipe Poubel Timm do Carmo, CRM-ES 13423, RQE 11122 – Cirurgia Geral. Ele atua em cuidados com a pele e em cirurgia dermatológica, sem registro de especialista em dermatologia.
+
+## Requisitos
+
+- Node.js 22 (o arquivo `.node-version` pede essa versão)
+- npm
+
+## Rodar localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O comando sobe o site em `http://localhost:4321`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para gerar a versão que vai ao ar:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run preview
+```
 
-## Learn More
+`npm run build` grava o site em `dist`. `npm run preview` serve essa pasta.
 
-To learn more about Next.js, take a look at the following resources:
+## Escrever um post
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Crie um arquivo `.md` ou `.mdx` em `src/content/blog/`. O nome do arquivo vira o endereço: `abcde-do-melanoma.md` fica em `/blog/abcde-do-melanoma`.
+2. Preencha o frontmatter:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```yaml
+---
+title: Título do artigo
+description: Resumo de uma ou duas frases, usado no Google e na lista do blog.
+date: 2026-11-10
+tags:
+  - câncer de pele
+audience: leigos
+draft: true
+---
+```
 
-## Deploy on Vercel
+- `audience` só aceita `leigos` ou `profissionais`.
+- `tags` também são as categorias. Cada tag ganha uma página em `/blog/tag/nome-da-tag`.
+- `draft: true` deixa o arquivo de fora da lista, da página do post, do RSS e do sitemap. O build falha se o rascunho de exemplo aparecer em `dist`.
+- Para publicar, mude para `draft: false` e rode o build de novo.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Já existe um único post de exemplo, `src/content/blog/exemplo-rascunho-nao-publicar.mdx`, com `draft: true`. Ele não deve ir para o ar. Apague-o quando não precisar mais do modelo.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Filtros de público, sem JavaScript:
+
+- `/blog`
+- `/blog/publico/leigos`
+- `/blog/publico/profissionais`
+
+O feed fica em `/rss.xml`.
+
+## Publicar no Cloudflare Pages
+
+1. No painel do Cloudflare Pages, crie um projeto apontando para este repositório.
+2. Build command: `npm run build`
+3. Output directory: `dist`
+4. Versão do Node: 22 (o arquivo `.node-version` já indica isso).
+5. Depois do primeiro deploy, associe o domínio `drfelipepoubel.com.br`.
+
+Não é preciso comando de start. O Pages só publica os arquivos de `dist`.
+
+O arquivo `public/_redirects` manda os endereços antigos para as páginas novas:
+
+- `/servicos/cirurgia-geral` → `/areas/cirurgia-geral`
+- `/servicos/cancer-de-pele` → `/areas/cancer-de-pele`
+- `/servicos/cirurgias-ambulatoriais` → `/areas/cirurgia-dermatologica`
+
+## Conformidade
+
+O rodapé de todas as páginas traz o nome completo, CRM-ES 13423, RQE 11122 – Cirurgia Geral e a frase de responsável técnico.
+
+O conteúdo evita promessa de resultado, depoimento de paciente e foto de antes e depois.
+
+Os mapas incorporados do site antigo não batiam com os endereços escritos. A página de contato abre o Google Maps com o endereço que já estava no texto.

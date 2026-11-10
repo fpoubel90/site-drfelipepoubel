@@ -1,0 +1,41 @@
+---
+import IllustrativeImage from "../../components/IllustrativeImage.astro";
+import Base from "../../layouts/Base.astro";
+import Cta from "../../components/Cta.astro";
+import { cirurgiaDermatologicaIntro, procedimentosDermatologicos } from "../../data/cirurgia-dermatologica";
+
+const description =
+  "Pequenas cirurgias de pele e procedimentos em consultório: pintas, cistos, lipomas, biópsias, crioterapia, unha encravada e lobuloplastia.";
+---
+
+<Base title="Cirurgia dermatológica" description={description}>
+  <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+    <p class="text-sm font-semibold text-blue-800">
+      <a href="/areas">Áreas de atuação</a>
+    </p>
+    <h1 class="mt-3 text-center text-4xl font-bold text-slate-900 sm:text-5xl">Cirurgia dermatológica</h1>
+    <p class="mx-auto mt-4 max-w-3xl text-center text-lg leading-relaxed text-slate-700">
+      {cirurgiaDermatologicaIntro}
+    </p>
+    <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        procedimentosDermatologicos.map((item) => (
+          <li id={item.id} class="scroll-mt-24 overflow-hidden rounded-xl bg-white shadow-xl">
+            <IllustrativeImage
+              src={item.image}
+              alt={item.imageAlt}
+              width={640}
+              height={360}
+              imgClass="aspect-video w-full object-cover"
+            />
+            <div class="p-5">
+              <h2 class="text-lg font-semibold text-rose-900">{item.title}</h2>
+              <p class="mt-2 text-sm leading-relaxed text-slate-700">{item.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+    <Cta>Agendar procedimento ou tirar dúvidas</Cta>
+  </div>
+</Base>

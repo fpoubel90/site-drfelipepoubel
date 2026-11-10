@@ -1,0 +1,26 @@
+---
+import type { locations } from "../data/site";
+
+interface Props {
+  place: (typeof locations)[number];
+}
+const { place } = Astro.props;
+const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${place.streetAddress}, ${place.locality}, ES, ${place.postalCode}`)}`;
+---
+
+<article class="flex flex-col rounded-xl bg-white p-5 shadow-xl">
+  <h3 class="text-center text-xl font-semibold text-slate-900">{place.name}</h3>
+  <address class="mt-4 space-y-1 text-sm not-italic text-slate-800">
+    {place.lines.map((line) => <p>{line}</p>)}
+  </address>
+  <p class="mt-4 text-sm">
+    <a class="font-semibold text-blue-800 hover:text-blue-900" href={place.phoneHref} rel="noopener noreferrer" target="_blank">
+      WhatsApp: {place.phoneDisplay}
+    </a>
+  </p>
+  <p class="mt-2 text-sm">
+    <a class="font-semibold text-blue-800 hover:text-blue-900" href={mapsHref} rel="noopener noreferrer" target="_blank">
+      Abrir no Google Maps
+    </a>
+  </p>
+</article>

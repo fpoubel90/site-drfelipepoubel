@@ -1,0 +1,55 @@
+---
+import IllustrativeImage from "../../components/IllustrativeImage.astro";
+import Base from "../../layouts/Base.astro";
+import { areas } from "../../data/site";
+
+const description =
+  "Áreas de atuação do Dr. Felipe Poubel: cirurgia geral, cuidados com a pele, cirurgia dermatológica e câncer de pele.";
+---
+
+<Base title="Áreas de atuação" description={description}>
+  <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+    <header class="max-w-3xl">
+      <h1 class="text-4xl font-bold text-slate-900">Áreas de atuação</h1>
+      <p class="mt-4 text-lg leading-relaxed text-slate-700">
+        Cirurgia geral, cuidados com a pele, cirurgia dermatológica e informações sobre câncer de pele.
+        O registro de especialista é o de Cirurgia Geral, indicado no rodapé.
+      </p>
+    </header>
+    <ul class="mt-10 grid gap-6 md:grid-cols-2">
+      {
+        areas.map((area) => (
+          <li>
+            <article class="overflow-hidden rounded-xl bg-white shadow-xl">
+              <a href={area.href} class="block">
+                {area.illustrative ? (
+                  <IllustrativeImage
+                    src={area.image}
+                    alt={area.imageAlt}
+                    width={800}
+                    height={500}
+                    imgClass="aspect-[16/9] w-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={area.image}
+                    alt={area.imageAlt}
+                    width="800"
+                    height="500"
+                    class="aspect-[16/9] w-full object-cover"
+                    loading="lazy"
+                  />
+                )}
+                <div class="p-6">
+                  <h2 class="text-2xl font-bold text-slate-900">{area.title}</h2>
+                  <p class="mt-3 text-slate-700">{area.summary}</p>
+                  <p class="mt-4 font-semibold text-blue-800">Saiba mais</p>
+                </div>
+              </a>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>
