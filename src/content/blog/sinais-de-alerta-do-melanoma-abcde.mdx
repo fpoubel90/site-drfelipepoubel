@@ -10,7 +10,14 @@ tags:
   - prevenção
 audience: leigos
 draft: false
+image:
+  src: /abcde-ilustracao.webp
+  alt: Ilustração da regra ABCDE e do sinal do patinho feio para observar pintas
+  width: 864
+  height: 1152
 ---
+
+import IllustrativeImage from "../../components/IllustrativeImage.astro";
 
 O melanoma é um tipo de câncer de pele que merece atenção especial, e vale a pena saber olhar para as próprias pintas. A regra do ABCDE é um jeito simples de lembrar o que observar e ajuda a decidir quando mostrar uma pinta ao médico.
 
@@ -49,6 +56,16 @@ Há também melanomas com pouco ou nenhum pigmento, chamados de amelanóticos. A
 Em geral, as pintas de uma mesma pessoa se parecem entre si. O sinal do patinho feio é a pinta que destoa das outras: é mais escura, maior, tem formato diferente ou simplesmente "não combina" com o resto [8].
 
 Em estudos, os melanomas costumavam ser justamente essas pintas diferentes [8]. Num deles, até pessoas sem formação em saúde reconheceram bem esses patinhos feios [8]. Num estudo com pessoas leigas, quem aprendeu o sinal do patinho feio acertou mais do que quem aprendeu só o ABCD, e os autores sugerem ensinar os dois juntos [9].
+
+<div class="not-prose my-8 overflow-hidden rounded-xl shadow-lg">
+  <IllustrativeImage
+    src={frontmatter.image.src}
+    alt={frontmatter.image.alt}
+    width={frontmatter.image.width}
+    height={frontmatter.image.height}
+    imgClass="h-auto w-full bg-white"
+  />
+</div>
 
 ## Que outros sinais merecem atenção?
 
