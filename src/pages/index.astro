@@ -1,0 +1,125 @@
+---
+import Base from "../layouts/Base.astro";
+import { areas, bio, locations, physician, physicianJsonLd } from "../data/site";
+
+const description =
+  "Dr. Felipe Poubel. Cirurgia geral e cuidados com a pele, com atendimento em Laranja da Terra, Afonso Cláudio e Santa Maria de Jetibá, no Espírito Santo.";
+---
+
+<Base
+  title="Dr. Felipe Poubel — Cirurgia geral e cuidados com a pele"
+  description={description}
+  jsonLd={physicianJsonLd()}
+>
+  <section class="bg-white">
+    <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-20">
+      <div class="text-center md:text-left">
+        <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+          {physician.publicName}
+        </h1>
+        <p class="mt-5 text-lg leading-relaxed text-slate-700 sm:text-xl">
+          {bio.hero}
+        </p>
+        <p class="mt-8">
+          <a
+            href="/contato"
+            class="inline-block rounded-lg bg-blue-700 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-blue-800 sm:text-lg"
+          >
+            Agende sua consulta
+          </a>
+        </p>
+      </div>
+      <div class="flex justify-center md:justify-end">
+        <img
+          src="/VIT_7655.jpg"
+          alt="Dr. Felipe Poubel, de jaleco branco, em foto de perfil profissional"
+          width="480"
+          height="600"
+          class="w-full max-w-md rounded-xl object-cover shadow-2xl"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+    <section class="rounded-xl bg-white px-5 py-12 shadow-xl sm:px-8" aria-labelledby="areas-titulo">
+      <div class="mb-10 text-center">
+        <h2 id="areas-titulo" class="text-3xl font-bold text-slate-900 sm:text-4xl">Áreas de atuação</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-700">
+          Cirurgia geral, cuidados com a pele, cirurgia dermatológica e câncer de pele.
+        </p>
+      </div>
+      <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          areas.map((area) => (
+            <li>
+              <a href={area.href} class="group block overflow-hidden rounded-lg bg-stone-50 shadow-md">
+                <img
+                  src={area.image}
+                  alt={area.imageAlt}
+                  width="500"
+                  height="500"
+                  class="aspect-square w-full object-cover"
+                  loading="lazy"
+                />
+                <span class="block p-4 text-xl font-bold text-slate-900 group-hover:text-blue-800">
+                  {area.title}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="mt-12 rounded-xl bg-white px-5 py-12 shadow-xl sm:px-8" aria-labelledby="sobre-titulo">
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <img
+          src="/VIT_7643.jpg"
+          alt="Dr. Felipe Poubel, de camisa azul, em foto de perfil"
+          width="400"
+          height="480"
+          class="mx-auto w-full max-w-sm rounded-xl object-cover shadow-xl"
+          loading="lazy"
+        />
+        <div>
+          <h2 id="sobre-titulo" class="text-3xl font-bold text-slate-900 sm:text-4xl">{physician.publicName}</h2>
+          <p class="mt-4 text-lg leading-relaxed text-slate-700">{bio.formation}</p>
+          <p class="mt-4 text-lg leading-relaxed text-slate-700">{bio.practice}</p>
+          <p class="mt-6">
+            <a class="font-semibold text-blue-800 hover:text-blue-900" href="/sobre">Leia a apresentação completa</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12" aria-labelledby="locais-titulo">
+      <div class="mb-8 text-center">
+        <h2 id="locais-titulo" class="text-3xl font-bold text-slate-900 sm:text-4xl">Onde me encontrar</h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-slate-700">
+          Atendo em diferentes locais para sua maior conveniência.
+        </p>
+      </div>
+      <ul class="grid gap-4 md:grid-cols-3">
+        {
+          locations.map((place) => (
+            <li class="rounded-xl bg-white p-5 shadow-xl">
+              <h3 class="text-lg font-semibold text-slate-900">{place.name}</h3>
+              <p class="mt-2 text-sm text-slate-700">{place.city}</p>
+              <p class="mt-1 text-sm text-slate-800">{place.lines[0]}</p>
+              <p class="mt-3">
+                <a class="font-semibold text-blue-800 hover:text-blue-900" href={place.phoneHref}>
+                  WhatsApp: {place.phoneDisplay}
+                </a>
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mt-6 text-center">
+        <a class="font-semibold text-blue-800 hover:text-blue-900" href="/contato">Ver mapas e contato</a>
+      </p>
+    </section>
+  </div>
+</Base>

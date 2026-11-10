@@ -1,0 +1,30 @@
+---
+import Base from "../../../layouts/Base.astro";
+import BlogFilters from "../../../components/BlogFilters.astro";
+import BlogList from "../../../components/BlogList.astro";
+import { audienceLabel, getPublishedPosts, type Audience } from "../../../lib/blog";
+
+export function getStaticPaths() {
+  return (["leigos", "profissionais"] as const).map((audience) => ({
+    params: { audience },
+  }));
+}
+
+const audience = Astro.params.audience as Audience;
+const posts = (await getPublishedPosts()).filter((post) => post.data.audience === audience);
+const label = audienceLabel(audience);
+const description = `Artigos do Dr. Felipe Poubel escritos para ${label.toLowerCase()}.`;
+---
+
+<Base title={`Blog para ${label.toLowerCase()}`} description={description}>
+  <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+    <h1 class="text-4xl font-bold text-slate-900">Blog para {label.toLowerCase()}</h1>
+    <p class="mt-4 text-lg text-slate-700">
+      Filtro por público. <a class="font-semibold text-blue-800" href="/blog">Ver todos os artigos</a>.
+    </p>
+    <div class="mt-8">
+      <BlogFilters audience={audience} />
+      <BlogList posts={posts} />
+    </div>
+  </div>
+</Base>
